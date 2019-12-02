@@ -1,16 +1,19 @@
-import React, { useEffect } from "react"
-import SetUp from "./SetUp"
+import React, { useEffect, useState } from "react"
 import { loadJoke } from "../actions/joke"
 import { connect } from "react-redux"
 
 function Home(props) {
+	const [reveal, setReveal] = useState(false)
 	useEffect(() => {
 		props.loadJoke()
+		setTimeout(() => {
+			setReveal(true)
+		}, 3000)
 	})
 	return (
 		<div>
-			<h1>Home</h1>
-			<SetUp />
+			<div className="setup">{props.joke.setup}</div>
+			{reveal ? <div className="punchline">{props.joke.punchline}</div> : null}
 		</div>
 	)
 }
