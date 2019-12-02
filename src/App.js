@@ -1,16 +1,18 @@
-import React, { Component } from "react"
+import React from "react"
+import store from "./store"
+import { Provider } from "react-redux"
+import { Route } from "react-router-dom"
+import Home from "./components/Home"
 
-class App extends Component {
-	componentDidMount() {}
-	render() {
-		return (
-			<div className="App">
-				<header className="App-header">
-					<h1>Programing Jokes</h1>
-				</header>
+function App() {
+	return (
+		<Provider store={store}>
+			<div>
+				<h1>App</h1>
+				<Route path="/" exact component={Home} />
 			</div>
-		)
-	}
+		</Provider>
+	)
 }
 
 export default App
