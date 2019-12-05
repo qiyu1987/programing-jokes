@@ -7,10 +7,7 @@ import Home from "./components/Home"
 function App() {
 	return (
 		<Provider store={store}>
-			<div>
-				<h1>App</h1>
-				<Route path="/" exact component={Home} />
-			</div>
+			<Route path="/" exact component={Home} />
 		</Provider>
 	)
 }

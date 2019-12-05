@@ -11,11 +11,18 @@ function Home(props) {
 		}, 3000)
 	})
 	return (
-		<div>
-			<div className="setup">{props.joke.setup}</div>
-			{reveal ? <div className="punchline">{props.joke.punchline}</div> : null}
+		<div className="container d-flex justify-content-center">
+			<div className="jumbotron my-5">
+				<h1 className="setup">{props.joke.setup}</h1>
+				{reveal ? <h2 className="punchline">{props.joke.punchline}</h2> : null}
+			</div>
 		</div>
 	)
+	// 	<div class="container h-100 d-flex justify-content-center">
+	//     <div class="jumbotron my-auto">
+	//       <h1 class="display-3">Hello, world!</h1>
+	//     </div>
+	//  </div>
 }
 const mapStateToProps = state => ({
 	joke: state.joke
