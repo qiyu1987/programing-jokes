@@ -11,14 +11,10 @@ function Home(props) {
 		}, 3000)
 	})
 	return (
-		<div className="centered">
-			<div className="container h-100 d-flex justify-content-center">
-				<div className="jumbotron my-auto">
-					<h1 className="setup">{props.joke.setup}</h1>
-					{reveal ? (
-						<h2 className="punchline">{props.joke.punchline}</h2>
-					) : null}
-				</div>
+		<div className="container d-flex justify-content-center">
+			<div className="jumbotron my-5">
+				<h1 className="setup">{props.joke.setup}</h1>
+				{reveal ? <h2 className="punchline">{props.joke.punchline}</h2> : null}
 			</div>
 		</div>
 	)
