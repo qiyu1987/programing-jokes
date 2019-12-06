@@ -12,9 +12,6 @@ function Home(props) {
 	})
 	return (
 		<div>
-			<div className="container d-flex justify-content-center mt-5">
-				<h1>Programing Joke</h1>
-			</div>
 			<div className="container d-flex justify-content-center">
 				<div className="jumbotron my-5">
 					<h2 className="setup">{props.joke.setup}</h2>
