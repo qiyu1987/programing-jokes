@@ -9,6 +9,7 @@ This project achieves the following functionalities:
 - Share a joke on facebook
 
 It was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).<br />
+Using redux as state management tool, [react-redux](https://react-redux.js.org/)<br />
 Styled with [styled components](https://www.styled-components.com/)<br />
 Social Media Share with [react share](https://www.npmjs.com/package/react-share)
 
