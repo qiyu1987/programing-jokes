@@ -1,6 +1,7 @@
 import React from "react"
+import { connect } from "react-redux"
 import styled from "styled-components"
-import { ReactComponent as Share } from "../share.svg"
+import { FacebookShareButton, FacebookIcon } from "react-share"
 import { ReactComponent as Monkey } from "../monkey.svg"
 const Nav = styled.div`
 	background-color: #fff;
@@ -18,9 +19,7 @@ const NavHeader = styled.div`
 const NavLeft = styled.div`
 	width: 33.333%;
 	text-align: left;
-	svg {
-		margin-left: 20px;
-	}
+	padding-left: 20px;
 `
 const NavCenter = styled.div`
 	width: 33.333%;
@@ -28,13 +27,12 @@ const NavCenter = styled.div`
 `
 const NavRight = styled.div`
 	width: 33.333%;
-	text-align: right;
-	svg {
-		margin-right: 20px;
-	}
+	display: flex;
+	justify-content: flex-end;
+	padding-right: 20px;
 `
 const MenuLink = styled.a``
-function Header() {
+function Header(props) {
 	return (
 		<Nav>
 			<NavHeader>
@@ -44,11 +42,21 @@ function Header() {
 				<NavCenter>Programing Jokes</NavCenter>
 				<NavRight>
 					<MenuLink href="#">
-						<Share />
+						<FacebookShareButton
+							url="http://facebook.com"
+							quote={`${props.joke.setup} 
+							${props.joke.punchline}`}
+							hashtag="#programing joke"
+						>
+							<FacebookIcon logoFillColor="white" />
+						</FacebookShareButton>
 					</MenuLink>
 				</NavRight>
 			</NavHeader>
 		</Nav>
 	)
 }
-export default Header
+const mapStateToProps = state => ({
+	joke: state.joke
+})
+export default connect(mapStateToProps)(Header)
