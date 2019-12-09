@@ -1,4 +1,14 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project achieves the following functionalities:
+
+- The main page displays a programming joke with a set up.
+- After a 5 seconds it will display the punchline of the joke
+- When the user refreshes the a page a different programming joke is displayed.
+- Integrate an external service https://github.com/15Dkatz/official_joke_api
+- Share a joke on facebook
+
+It was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Styled with [styled components](https://www.styled-components.com/)
+Social Media Share with [react share](https://www.npmjs.com/package/react-share)
 
 ## Available Scripts
 
