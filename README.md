@@ -1,3 +1,5 @@
+Deployed to Heroku (https://programing-jokes.herokuapp.com/)<br />
+
 This project achieves the following functionalities:
 
 - The main page displays a programming joke with a set up.
@@ -6,8 +8,8 @@ This project achieves the following functionalities:
 - Integrate an external service https://github.com/15Dkatz/official_joke_api
 - Share a joke on facebook
 
-It was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-Styled with [styled components](https://www.styled-components.com/)
+It was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).<br />
+Styled with [styled components](https://www.styled-components.com/)<br />
 Social Media Share with [react share](https://www.npmjs.com/package/react-share)
 
 ## Available Scripts
