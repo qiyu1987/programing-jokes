@@ -1,6 +1,22 @@
 import React, { useEffect, useState } from "react"
+import styled from "styled-components"
 import { loadJoke } from "../actions/joke"
 import { connect } from "react-redux"
+
+const SetUp = styled.div`
+	background-color: #e9ecef;
+	border-radius: 0.3rem;
+	text-align: center;
+	padding: 4rem 2rem;
+	margin: 2rem;
+`
+const Punchline = styled.div`
+	background-color: #e9ecef;
+	border-radius: 0.3rem;
+	text-align: center;
+	padding: 4rem 2rem;
+	margin: 4rem;
+`
 
 function Home(props) {
 	const [reveal, setReveal] = useState(false)
@@ -8,21 +24,22 @@ function Home(props) {
 		props.loadJoke()
 		setTimeout(() => {
 			setReveal(true)
-		}, 3000)
+		}, 5000)
 	})
 	return (
-		<div className="container d-flex justify-content-center">
-			<div className="jumbotron my-5">
-				<h1 className="setup">{props.joke.setup}</h1>
-				{reveal ? <h2 className="punchline">{props.joke.punchline}</h2> : null}
-			</div>
+		<div>
+			{props.joke.setup ? (
+				<SetUp>
+					<h2>{props.joke.setup}</h2>
+				</SetUp>
+			) : null}
+			{reveal ? (
+				<Punchline>
+					<h3>{props.joke.punchline}</h3>
+				</Punchline>
+			) : null}
 		</div>
 	)
-	// 	<div class="container h-100 d-flex justify-content-center">
-	//     <div class="jumbotron my-auto">
-	//       <h1 class="display-3">Hello, world!</h1>
-	//     </div>
-	//  </div>
 }
 const mapStateToProps = state => ({
 	joke: state.joke
