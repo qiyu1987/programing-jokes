@@ -43,7 +43,7 @@ function Header(props) {
 				<NavRight>
 					<MenuLink href="#">
 						<FacebookShareButton
-							url="http://facebook.com"
+							url="https://programing-jokes.herokuapp.com/"
 							quote={`${props.joke.setup} 
 							${props.joke.punchline}`}
 							hashtag="#programing joke"
