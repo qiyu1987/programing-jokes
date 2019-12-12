@@ -1,11 +1,13 @@
 import React from "react"
 import useForm from "react-hook-form"
 import { connect } from "react-redux"
+import { signUp } from "../actions/auth"
 
-function Signup() {
+function Signup(props) {
 	const { register, handleSubmit, watch, errors } = useForm()
 	const onSubmit = data => {
 		console.log(data)
+		props.signUp(data)
 	}
 
 	console.log(watch("username")) // watch input value by passing the name of it
@@ -33,4 +35,4 @@ function Signup() {
 		</form>
 	)
 }
-export default connect(null)(Signup)
+export default connect(null, { signUp })(Signup)

@@ -7,7 +7,8 @@ const jokeFetched = joke => ({
 })
 export const loadJoke = () => (dispatch, getState) => {
 	if (Object.keys(getState().joke).length !== 0) return
-	request(externalUrl)
+	request
+		.get(externalUrl)
 		.then(res => {
 			dispatch(jokeFetched(res.body[0]))
 		})
