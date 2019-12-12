@@ -1,5 +1,5 @@
 import request from "superagent"
-import { baseUrl } from "../constants"
+import { externalUrl } from "../constants"
 export const JOKE_FETCHED = "JOKE_FETCHED"
 const jokeFetched = joke => ({
 	type: JOKE_FETCHED,
@@ -7,7 +7,7 @@ const jokeFetched = joke => ({
 })
 export const loadJoke = () => (dispatch, getState) => {
 	if (Object.keys(getState().joke).length !== 0) return
-	request(`${baseUrl}`)
+	request(externalUrl)
 		.then(res => {
 			dispatch(jokeFetched(res.body[0]))
 		})
