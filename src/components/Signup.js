@@ -1,25 +1,36 @@
 import React from "react"
 import useForm from "react-hook-form"
+import { connect } from "react-redux"
 
-export default function Signup() {
+function Signup() {
 	const { register, handleSubmit, watch, errors } = useForm()
 	const onSubmit = data => {
 		console.log(data)
 	}
 
-	console.log(watch("example")) // watch input value by passing the name of it
+	console.log(watch("username")) // watch input value by passing the name of it
 
 	return (
 		<form onSubmit={handleSubmit(onSubmit)}>
 			{/* register your input into the hook by invoking the "register" function */}
-			<input name="example" defaultValue="test" ref={register} />
+			<input
+				name="username"
+				defaultValue="username"
+				ref={register({ required: true })}
+			/>
+			{errors.username && <span>username is required</span>}
 
 			{/* include validation with required or other standard HTML validation rules */}
-			<input name="exampleRequired" ref={register({ required: true })} />
+			<input
+				name="password"
+				defaultValue="password"
+				ref={register({ required: true })}
+			/>
 			{/* errors will return when field validation fails  */}
-			{errors.exampleRequired && <span>This field is required</span>}
+			{errors.password && <span>password is required</span>}
 
 			<input type="submit" />
 		</form>
 	)
 }
+export default connect(null)(Signup)
